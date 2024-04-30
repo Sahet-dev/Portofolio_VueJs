@@ -9,11 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/league-spartan": "^5.0.20",
     "@fontsource/koho": "^5.0.12",
     "@fontsource/titillium-web": "^5.0.19",
     "@headlessui/vue": "^1.7.19",
     "@heroicons/vue": "^2.1.1",
+    "@studio-freight/lenis": "^1.0.42",
+    "@vueuse/motion": "^2.1.0",
     "gsap": "^3.12.5",
+    "split-type": "^0.3.4",
     "vue": "^3.4.15",
     "vue-router": "^4.3.0"
   },

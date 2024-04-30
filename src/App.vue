@@ -1,12 +1,25 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
+import Lenis from '@studio-freight/lenis'
+import {onMounted, ref } from 'vue'
 
 
-import { ref } from 'vue'
-const currentPageName = ref('');
-const isTestShowing = ref(false);
-const isShowing = ref(true);
-const isShowingPageName = ref(false);
+const lenis = new Lenis();
+
+lenis.on('scroll', (e) => {
+  // console.log(e);
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+onMounted(() => {
+  requestAnimationFrame(raf);
+});
+
+
 
 
 
@@ -14,12 +27,13 @@ const isShowingPageName = ref(false);
 </script>
 <template>
   <div class="flex justify-center items-center mt-4 w-full">
-          
+
     <div id="navbar" class="fixed z-10 backdrop-filter backdrop-blur-md rounded-full">
-      <router-link to="/"> Home </router-link> |   
+      <router-link to="/"> Home </router-link> |
       <router-link to="/projects"> Projects </router-link> |
       <router-link to="/about"> About </router-link>    |
       <router-link to="contact"> Contact </router-link> |
+      <router-link to="/tests"> Tests </router-link>
     </div>
   </div>
   <div class="">
@@ -29,20 +43,11 @@ const isShowingPageName = ref(false);
     </transition>
   </router-view>
   </div>
-  
+
 </template>
 
 <style>
-body {
-  
-  text-align: center;
- 
-  /* color: #e1e4e7; */
-  margin: 0;
-  background: #ebeaea;
-  /* background: black; */
-  
-}
+
 #navbar {
   padding: 10px;
 }
