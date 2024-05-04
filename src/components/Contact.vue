@@ -130,7 +130,7 @@ export default {
           start: 'top 90%', // Start the animation when the top of the element is 80% in view
           end: 'bottom 83%', // End the animation when the bottom of the element is 20% in view
           scrub: true, // Smoothly animate as you scroll
-          markers: true,
+          markers: false,
           onEnter: () => {
             element.classList.add('animate');
           },
