@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router';
 import Lenis from '@studio-freight/lenis'
 import {onMounted, ref } from 'vue'
+import Entering from "@/components/Entering.vue";
 
 
 const lenis = new Lenis();
@@ -20,29 +21,47 @@ onMounted(() => {
 });
 
 
+const showFirst = ref(true);
+const showSecond = ref(false);
+
+// Show the first element for 4 seconds
+setTimeout(() => {
+  showFirst.value = false;
+  showSecond.value = true;
+}, 5000);
+
+// Hide the second element after 4 seconds
+setTimeout(() => {
+  showSecond.value = false;
+}, 8000);
 
 
 
 
 </script>
 <template>
-  <div class="flex justify-center items-center mt-4 w-full">
+  <div v-if="showFirst" class="first-element">
+    <Entering />
+  </div>
+  <div v-else class="second-element">
+    <div class="flex justify-center items-center mt-4 w-full">
 
-    <div id="navbar" class="fixed z-10 backdrop-filter backdrop-blur-md rounded-full">
-      <router-link to="/"> Home </router-link> |
-      <router-link to="/projects"> Projects </router-link> |
-      <router-link to="/about"> About </router-link>    |
-      <router-link to="contact"> Contact </router-link> |
-      <router-link to="/tests"> Tests </router-link>
+      <div id="navbar" class="fixed z-10 backdrop-filter backdrop-blur-md rounded-full">
+        <router-link to="/"> Home </router-link> |
+        <router-link to="/projects"> Projects </router-link> |
+        <router-link to="/about"> About </router-link>    |
+        <router-link to="contact"> Contact </router-link> |
+      </div>
+    </div>
+    <div class="">
+      <router-view v-slot="{ Component }">
+        <transition name="route" mode="out-in">
+          <component :is="Component"></component>
+        </transition>
+      </router-view>
     </div>
   </div>
-  <div class="">
-    <router-view v-slot="{ Component }">
-    <transition name="route" mode="out-in">
-      <component :is="Component"></component>
-    </transition>
-  </router-view>
-  </div>
+
 
 </template>
 
