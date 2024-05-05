@@ -128,15 +128,15 @@ export default {
     return {
       desiredWidth: '300px', // Adjust as needed
       desiredHeight: 'auto',
-      imagePath: "public/img/background.png",
-      socialApp: "public/projectsImg/socialapp.png",
-      blogApp: "public/projectsImg/blogapp.png",
-      en: "public/projectsImg/engtm.png",
-      randomQuote: "public/projectsImg/randomquote.png",
-      drumMachine: "public/projectsImg/drummachine.png",
-      markdown: "public/projectsImg/markdown.png",
-      calculator: "public/projectsImg/calculator.png",
-      pomodoro: "public/projectsImg/pomodoro.png",
+      imagePath: "./public/img/background.png",
+      socialApp: "./public/projectsImg/socialapp.png",
+      blogApp: "./public/projectsImg/blogapp.png",
+      en: "./public/projectsImg/engtm.png",
+      randomQuote: "./public/projectsImg/randomquote.png",
+      drumMachine: "./public/projectsImg/drummachine.png",
+      markdown: "./public/projectsImg/markdown.png",
+      calculator: "./public/projectsImg/calculator.png",
+      pomodoro: "./public/projectsImg/pomodoro.png",
       showHello: true,};
   },
   setup() {

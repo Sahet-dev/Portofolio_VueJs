@@ -88,7 +88,7 @@ import {ref} from "vue";
 export default {
   data() {
     return {
-      imagePath: "public/img/background.png", // Default image path
+      imagePath: "./public/img/background.png", // Default image path
     };
   },
   setup() {

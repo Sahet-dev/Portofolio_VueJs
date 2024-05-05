@@ -11,9 +11,7 @@
 
       </Transition>
 
-    <p class="text-white  mb-4 animated-element">
-        Feel free to drop me a message using the contact form below. I look forward to hearing from you!
-    </p>
+
 
 
     <!-- Contact Form -->
